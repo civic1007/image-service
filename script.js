@@ -1,6 +1,7 @@
 const imageList = [
     { title: 'avatar', url: '/pages/avatar.html', img: '/images/avatar.png' },
     { title: 'cat', url: '/pages/silly_cats.html', img: '/images/silly_cats.png' },
+    { title: 'smile', url: '/pages/smile.html', img: '/images/smile.png' },
 ];
 
 function displayImageButtons() {
