@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 20px;
     text-align: center;
-    color: #98FF98; 
+    color: #ffffff; 
 }
 
 h1 {
@@ -33,12 +33,12 @@ button {
     padding: 10px 20px;
     margin: 10px;
     border-radius: 8px;
-    color: #98FF98;
+    color: #ffffff;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #7ACC7A;
+    background-color: #ffffff;
 }
 
 .container {
@@ -56,12 +56,8 @@ button:hover {
     padding: 10px 20px;
     margin-top: 10px;
     border-radius: 8px;
-    color: #98FF98;
+    color: #ffffff;
     text-decoration: none;
-}
-
-.download-button:hover {
-    background-color: #7ACC7A;
 }
 
 .image-button {
