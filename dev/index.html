@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>devs</title>
+    <title>Login Page</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
@@ -17,6 +17,20 @@
             font-family: 'Roboto', sans-serif;
             overflow: hidden;
             color: #ffffff;
+
+            .content button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: #6200EE;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        .content button:hover {
+            background-color: #3700B3;
+        }
         }
         .login-container {
             background-color: #1e1e1e;
@@ -84,32 +98,22 @@
             font-size: 18px;
             margin-bottom: 20px;
         }
-        .content button {
-            padding: 10px 20px;
-            font-size: 16px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            background-color: #6200EE;
-            color: white;
-            transition: background-color 0.3s ease;
-        }
-        .content button:hover {
-            background-color: #3700B3;
-        }
     </style>
 </head>
 <body>
     <div class="login-container" id="login-container">
-        <h2>login</h2>
+        <h2>Login</h2>
         <input type="text" id="username" placeholder="Username">
         <input type="password" id="password" placeholder="Password">
         <button onclick="login()">Login</button>
     </div>
     <div class="content" id="content">
-        <h1>secured with civic.lock</h1>
-        <p>this is a developers only page on this site.</p>
-
+        <h1>secured with civic's locking system</h1>
+        <p>this area is only for developers or any workers of civic web group (we are not open source)</p>
+        <a href="https://github.com/civic1007/image-service">
+            <button>github repository for this website</button>
+          </a>
+          
     </div>
     <script>
         let credentials = {username: '', password: ''};
