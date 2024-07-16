@@ -3,26 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dev only</title>
-    <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
+    <title>devs</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
         body {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f0f0f0;
+            background-color: #121212;
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             overflow: hidden;
+            color: #ffffff;
         }
         .login-container {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            background-color: #1e1e1e;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             width: 100%;
-            max-width: 400px;
+            max-width: 360px;
             box-sizing: border-box;
             position: absolute;
             transition: opacity 0.5s ease, transform 0.5s ease;
@@ -38,23 +40,27 @@
             width: 100%;
             margin-bottom: 20px;
             padding: 15px;
-            border: 1px solid #ccc;
+            border: none;
             border-radius: 4px;
             box-sizing: border-box;
+            background-color: #333;
+            color: #fff;
+            font-size: 16px;
         }
         .login-container button {
             display: block;
             width: 100%;
             padding: 15px;
-            background-color: #000000;
+            background-color: #6200EE;
             color: white;
             border: none;
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
+            transition: background-color 0.3s ease;
         }
         .login-container button:hover {
-            background-color: #000000;
+            background-color: #3700B3;
         }
         .hidden {
             opacity: 0;
@@ -64,26 +70,45 @@
             display: none;
             opacity: 0;
             transition: opacity 0.5s ease;
+            text-align: center;
         }
         .content.show {
             display: block;
             opacity: 1;
         }
+        .content h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .content p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .content button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: #6200EE;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        .content button:hover {
+            background-color: #3700B3;
+        }
     </style>
 </head>
 <body>
     <div class="login-container" id="login-container">
-        <h2>Login</h2>
+        <h2>login</h2>
         <input type="text" id="username" placeholder="Username">
         <input type="password" id="password" placeholder="Password">
-        <button onclick="login()">login</button>
+        <button onclick="login()">Login</button>
     </div>
     <div class="content" id="content">
-        <h1>this area has been protected with civiclock</h1>
-        <p>dev only area.</p>
-        <p>things we need to work on</p>
-        <p>-adding more images</p>
-        <p>-more famous and make a script that stops people from using inspect element</p>
+        <h1>secured with civic.lock</h1>
+        <p>this is a developers only page on this site.</p>
 
     </div>
     <script>
