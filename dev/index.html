@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dev only</title>
+    <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        .login-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box;
+            position: absolute;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .login-container h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 24px;
+            text-align: center;
+        }
+        .login-container input {
+            display: block;
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .login-container button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .login-container button:hover {
+            background-color: #45a049;
+        }
+        .hidden {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        .content {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .content.show {
+            display: block;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container" id="login-container">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+    </div>
+    <div class="content" id="content">
+        <h1>admins only</h1>
+        <p>Welcome to the protected area!</p>
+    </div>
+    <script>
+        let credentials = {username: '', password: ''};
+
+        async function fetchCredentials() {
+            const response = await fetch('https://gist.githubusercontent.com/civic1007/c45a81b41411ad24111f090a7a94fb12/raw');
+            const text = await response.text();
+            const lines = text.split('\n');
+            credentials.username = lines[0].split(':')[1].trim();
+            credentials.password = lines[1].split(':')[1].trim();
+        }
+
+        async function login() {
+            await fetchCredentials();
+
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username === credentials.username && password === credentials.password) {
+                var loginContainer = document.getElementById("login-container");
+                var content = document.getElementById("content");
+
+                loginContainer.classList.add("hidden");
+
+                setTimeout(function() {
+                    loginContainer.style.display = "none";
+                    content.classList.add("show");
+                }, 500);
+            } else {
+                alert("Incorrect username or password");
+            }
+        }
+    </script>
+</body>
+</html>
